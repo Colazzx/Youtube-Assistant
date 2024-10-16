@@ -21,6 +21,10 @@ def create_db_from_youtube_link(video_url: str) -> FAISS:
     loader = YoutubeLoader.from_youtube_url(video_url)
     transcript = loader.load()
 
+    if not transcript or len(transcript) == 0:
+        st.error("Failed to retrieve the transcript from the video.")
+        return None
+
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=100
@@ -28,6 +32,11 @@ def create_db_from_youtube_link(video_url: str) -> FAISS:
 
     docs = text_splitter.split_documents(transcript)
 
+    if not docs or len(docs) == 0:
+        st.error("No documents were created from the transcript.")
+        return None
+
+    # Create the FAISS database
     db = FAISS.from_documents(docs, embeddings)
     return db
 
