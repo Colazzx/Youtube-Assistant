@@ -7,12 +7,11 @@ from langchain import PromptTemplate
 from langchain.chains import LLMChain
 import os
 import streamlit as st
-from secret_key import openai_key
 
-# Access the OpenAI API key from Streamlit Secrets
+# Access the OpenAI API key from Streamlit secrets
 openai_key = st.secrets["OPENAI_API_KEY"]
 
-# API Key for OpenAI
+# Set the API key for OpenAI
 os.environ['OPENAI_API_KEY'] = openai_key
 
 # Embeddings
