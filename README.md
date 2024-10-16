@@ -69,5 +69,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
+- This project was inspired and helped by the repository: [youtube-assistant-langchain](https://github.com/rishabkumar7/youtube-assistant-langchain.git) by Rishab Kumar.
 - [LangChain](https://github.com/hwchase17/langchain)
 - [OpenAI](https://openai.com)
