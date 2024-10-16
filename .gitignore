@@ -1,0 +1,11 @@
+# Ignore Python virtual environment
+env/
+
+# Ignore IDE settings
+.idea/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore sensitive secret keys
+secret_key.py
